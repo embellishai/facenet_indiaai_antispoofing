@@ -1,0 +1,38 @@
+# Core Deep Learning Libraries
+torch
+torchvision
+torchaudio
+
+# Computer Vision
+opencv-python
+opencv-contrib-python
+pillow
+albumentations
+
+# InsightFace and Face Recognition
+insightface
+onnxruntime
+onnx
+
+# Data Processing
+numpy
+pandas
+scikit-learn
+
+# Configuration and Environment
+pyyaml
+python-dotenv
+
+# Logging and Monitoring
+tensorboard
+tqdm
+
+# Utilities
+pathlib
+matplotlib
+seaborn
+
+# Development Tools (Optional)
+jupyter
+ipython
+

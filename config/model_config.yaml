@@ -1,0 +1,60 @@
+# Model-Specific Configuration for InsightFace Buffalo_L
+
+# Buffalo_L Model Architecture
+buffalo_l:
+  network: 'iresnet100'
+  embedding_size: 512
+  pretrained_path: null  # Will be downloaded automatically if null
+  
+# Recognition Head Configuration
+recognition_head:
+  type: 'ArcFace'  # ArcFace, CosFace, SphereFace
+  num_classes: null  # Will be set dynamically based on dataset
+  embedding_size: 512
+  scale: 64.0
+  margin: 0.5
+  easy_margin: false
+  
+# Backbone Configuration
+backbone:
+  network_depth: 100  # 50, 100, 152
+  drop_ratio: 0.0
+  net_mode: 'ir'  # ir (improved resnet), ir_se (with squeeze-excitation)
+  feat_dim: 512
+  out_h: 7
+  out_w: 7
+  
+# Face Detection (for inference)
+detection:
+  enabled: true
+  detector: 'retinaface'
+  conf_threshold: 0.5
+  nms_threshold: 0.4
+  
+# Face Alignment (for inference)
+alignment:
+  enabled: true
+  landmark_points: 5
+  
+# Inference Configuration
+inference:
+  batch_size: 32
+  threshold: 0.6  # Similarity threshold for face matching
+  top_k: 5  # Return top K matches
+  
+# Data Augmentation (Advanced)
+augmentation:
+  geometric:
+    random_flip_prob: 0.5
+    random_rotation_degrees: [-10, 10]
+    random_perspective: 0.0
+    random_crop_scale: [0.9, 1.0]
+  
+  photometric:
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+    hue: 0.1
+    blur_prob: 0.1
+    noise_prob: 0.1
+
